@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=MonteCarlo&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Slick slider -->
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Minipomeran</title>
+</head>
+<body>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header p-0">
+                <h3 class="modal-title text-center fs-5" id="exampleModalLabel">
+                    Введите Ваши данные и удобное время для обсуждения деталей приобретения щенка
+                </h3>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Закрыть">
+                <span></span>
+              </button>
+            </div>
+            <div class="modal-body p-0 mt-3">
+                <form>
+                    <div class="w-100 mb-3 z-3 position-relative">
+                      <input name="name" type="text" class="form-control" id="exampleInputName" required>
+                      <span placeholder="Ваше Имя"></span>
+                    </div>
+                    <div class="w-100 mb-3 z-3 position-relative">
+                      <input name="phone" type="tel" class="form-control" id="exampleInputTel" required>
+                      <span placeholder="Ваш номер телефона"></span>
+                    </div>
+                    <div class="w-100 mb-3 z-3 position-relative">
+                        <input name="time" type="text" placeholder="Введите удобное время" class="form-control" id="exampleInputTime" required>
+                    </div>
+                    <button type="button" class="btn btn-secondary text-uppercase w-100">Получение консультации</button>
+                    <p class="text-center mt-3">
+                        Нажимая на кнопку «Отправить», Вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности
+                    </p>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Модальное окно -->
+<div class="overlay"></div>
+    <header class="header" id="header">
+        <div class="container-md container-fluid">
+            <!-- Десктоп меню -->
+              <nav class="navbar bg-dark-blue navbar-expand-lg pt-lg-0 d-none d-lg-block">
+                <div class="container-md container-fluid">
+                  <button class="navbar-toggler position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+                    <span></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav justify-content-between w-100 mb-2 mb-lg-0">
+                        <div class="d-flex justify-content-around align-items-center w-100">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Элитный клуб</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Родословная</a>
+                            </li>
+                        </div>
+                        <a class="navbar-brand w-100 me-0" href="index.html">
+                            <img src="img/logo.svg" alt="Minipomeran">
+                        </a>
+                        <div class="d-flex justify-content-around align-items-center w-100">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Щенки на продажу</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Контакты</a>
+                            </li>
+                            <li class="lang nav-item d-flex">
+                                <a class="nav-link active" href="#">ru</a>
+                                <a class="nav-link" href="#">en</a>
+                            </li>
+                        </div>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- Десктоп меню -->
+
+              <!-- Мобильное меню -->
+              <nav class="navbar bg-dark-blue navbar-mobile navbar-expand-lg py-3 d-lg-none">
+                <div class="container-md container-fluid">
+                    <div class="d-flex w-100 align-items-center">
+                        <div class="d-flex flex-column w-100">
+                            <button class="navbar-toggler position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+                                <span></span>
+                            </button>
+                            <img class="mt-3 mobile" src="img/mobile-menu-line-left.svg">
+                        </div>
+                        <a class="navbar-brand mobile w-100 me-0" href="index.html">
+                            <img src="img/logo.svg" alt="Minipomeran">
+                        </a>
+                        <div class="d-flex flex-column mobile w-100">
+                            <div class="lang nav-item d-flex flex-column flex-md-row ms-auto">
+                                <a class="nav-link active" href="#">ru</a>
+                                <a class="nav-link" href="#">en</a>
+                            </div>
+                            <img class="mt-4 d-none d-md-block" src="img/mobile-menu-line-right.svg">
+                        </div>
+                    </div>
+                  <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav align-items-center w-100 mb-2 mb-lg-0">
+                        <a class="navbar-brand me-0" href="index.html">
+                            <img src="img/logo.svg" alt="Minipomeran">
+                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Элитный клуб</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Родословная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Щенки на продажу</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Контакты</a>
+                        </li>
+                        <li class="lang nav-item d-flex mt-4">
+                            <a class="nav-link active" href="#">ru</a>
+                            <a class="nav-link" href="#">en</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- Мобильное меню -->
+        </div>
+    </header>
+    <div class="bg">
+    <section id="product" class="product">
+        <div class="container">
+            <div class="row">
+                <a href="#" class="d-flex align-items-center mt-5">
+                    <img src="img/back-arrow.svg">
+                    <span class="ms-4">Назад</span>
+                </a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="slider">
+                        <div><img src="img/slider.jpg" alt="img"></div>
+                        <div><img src="img/slider.jpg" alt="img"></div>
+                        <div><img src="img/slider.jpg" alt="img"></div>
+                        <div><img src="img/slider.jpg" alt="img"></div>
+                    </div>
+                    <div class="miniature mt-3">
+                        <div class="miniature-slide"><img src="img/slider.jpg" alt="img"></div>
+                        <div class="miniature-slide"><img src="img/slider.jpg" alt="img"></div>
+                        <div class="miniature-slide"><img src="img/slider.jpg" alt="img"></div>
+                        <div class="miniature-slide"><img src="img/slider.jpg" alt="img"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-md-5">
+                    <h2 class="text-uppercase text-center text-md-start mt-4 mt-md-0">
+                        Meringue
+                    </h2>
+                    <div class="price d-flex align-items-center flex-column flex-md-row mt-2">
+                        <div class="me-md-4">
+                            $5,800.00
+                        </div>
+                        <a href="#" class="btn btn-secondary d-flex align-items-center justify-content-center text-uppercase mt-2 mt-lg-0 w-100 w-md-auto">
+                            Забронировать
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center flex-column flex-md-row mt-4">
+                        <p>
+                            Написать / Позвонить / Whatsapp:
+                        </p>
+                        <a href="tel:+74956780000" class="text-underline ms-3 mt-2 mt-md-0">
+                            +7 495 678 00 00
+                        </a>
+                    </div>
+                    <div class="characteristic mt-5">
+                        <div class="d-flex mt-2">
+                            <div>
+                                Имя щенка:
+                            </div>
+                            <p>
+                                Meringue
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Пол:
+                            </div>
+                            <p>
+                                девочка
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Дата рождения:
+                            </div>
+                            <p>
+                                15.12.2023 г.
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Порода/тип:
+                            </div>
+                            <p>
+                                Мальтипу/медвежонок
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Окрас:
+                            </div>
+                            <p>
+                                Дымчатый
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Размер:
+                            </div>
+                            <p>
+                                Высота в холке во взрослом возрасте ожидается до 19 см
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Вес:
+                            </div>
+                            <span>
+                                <p>
+                                    Супер мини
+                                </p>
+                                <p>
+                                    Ожидаемый вес до 2 кг.
+                                </p>
+                            </span>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Прививки:
+                            </div>
+                            <p>
+                                Vanguard Plus 5CV/ L
+                            </p>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <div>
+                                Документы:
+                            </div>
+                            <p>
+                                РКФ, клеймо, микрочип.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="mt-4">
+                        C раннего возраста приучена на пеленку, она прекрасно социализирована и очень хорошо находит контакт с другими животными, мы допускаем только тех щенков которые полностью подходят под наши строгие стандарты к качеству.
+                    </p>
+                    <p class="mt-4">
+                        Стоимость перевозки с помощью Pet Cargo оплачивается нами для следующих упомянутых аэропортов: LAX, MIA, JFK, ORD, SFO, SEA, ATL, YYZ и YVR. Мы осуществляем доставку по всему миру с помощью няни.
+                    </p>
+                    <div class="video my-5">
+                        <iframe width="100%" height="332" src="https://www.youtube.com/embed/AGzqHdyKvjg?si=dqkwtEFFIzM_Gi5Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="btn btn-secondary text-uppercase w-md-auto m-auto mb-5" href="#">
+                        Смотреть других щенков
+                    </a>
+                </div>
+            </div>
+            <img class="d-flex m-auto" src="img/hr-pursuit.svg">
+        </div>
+    </section>
+    <section class="world" id="world">
+            <div class="container text-center">
+                <h2>
+                    Работаем по всему миру
+                </h2>
+                <img class="d-flex mx-auto my-2" src="img/companion-line.svg">
+                <p>
+                    Наши щенки пользуются популярностью даже за рубежом, в том числе и в странах, где существует собственная элитная школа разведения померанских шпицев.
+                </p>
+                <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center mt-4">
+                    <a class="btn d-flex align-items-center me-sm-5" href="tel:+74956780000">
+                        <img class="me-2" src="img/companion-icon-left.svg">
+                        +7 495 678 00 00
+                        <img class="ms-2" src="img/companion-icon-right.svg">
+                    </a>
+                    <a class="btn d-flex align-items-center" href="mailto:info@minipomeran.com">
+                        <img class="me-2" src="img/companion-icon-left.svg">
+                        info@minipomeran.com
+                        <img class="ms-2" src="img/companion-icon-right.svg">
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-lg-between mt-3">
+                    <a href="#" class="text-uppercase w-50">
+                        Telegram
+                    </a>
+                    <a href="#" class="text-uppercase w-50 mx-sm-5">
+                        Instagram*
+                    </a>
+                    <a href="#" class="text-uppercase w-50 mt-3 mt-sm-0">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer pt-5 pt-lg-0" id="footer">
+            <div class="accordion accordion-flush d-lg-none" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button py-2 py-sm-0 px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Информация о компании
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="d-flex mb-3">
+                            <span class="me-2">Компания:</span><span>Minipomeran</span>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-2">Адрес:</span><span>Lorem ipsum dolor sit amet consectetur. Nullam consequat quam volutpat in nisi.</span>
+                        </div>
+                        <div>
+                            Copyright © Minipomeran. Все права защищены
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button py-2 py-sm-0 px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Контакты для связи
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="d-flex mb-3">
+                            <span class="me-4">Телефон:</span>
+                            <div class="d-flex flex-column">
+                                <a href="tel:+74956780000" class="mb-2">
+                                    +7 495 678 00 00
+                                </a>
+                                <a href="tel:+74956780000">
+                                    +7 495 678 00 00
+                                </a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-5">Почта:</span>
+                            <a href="mailto:info@minipomeran.com" class="mb-2">
+                                info@minipomeran.com
+                            </a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="social d-flex">
+                                <a href="#">
+                                    <img src="img/telegram.svg" alt="telegram">
+                                </a>
+                                <a href="#" class="mx-2">
+                                    <img src="img/whatsapp.svg" alt="whatsapp">
+                                </a>
+                                <a href="#">
+                                    <img src="img/instagram.svg" alt="instagram">
+                                </a>
+                            </div>
+                            <p class="ms-2">
+                                *Признаны экстремистскими организациями и запрещены на территории РФ
+                            </p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button py-2 py-sm-0 px-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Документы
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body d-flex flex-column">
+                        <a href="#" class="mb-2">
+                            Политика конфиденциальности
+                        </a>
+                        <a href="#">
+                            Пользовательское соглашение
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="container">
+                <div class="row d-none d-lg-flex">
+                    <div class="col-lg-4">
+                        <div class="footer-title">
+                            Информация о компании
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-2">Компания:</span><span>Minipomeran</span>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-2">Адрес:</span><span>Lorem ipsum dolor sit amet consectetur. Nullam consequat quam volutpat in nisi.</span>
+                        </div>
+                        <div>
+                            Copyright © Minipomeran. Все права защищены
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="footer-title">
+                            Контакты для связи
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-4">Телефон:</span>
+                            <div class="d-flex flex-column">
+                                <a href="tel:+74956780000" class="mb-2">
+                                    +7 495 678 00 00
+                                </a>
+                                <a href="tel:+74956780000">
+                                    +7 495 678 00 00
+                                </a>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <span class="me-5">Почта:</span>
+                            <a href="mailto:info@minipomeran.com" class="mb-2">
+                                info@minipomeran.com
+                            </a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="social d-flex">
+                                <a href="#">
+                                    <img src="img/telegram.svg" alt="telegram">
+                                </a>
+                                <a href="#" class="mx-2">
+                                    <img src="img/whatsapp.svg" alt="whatsapp">
+                                </a>
+                                <a href="#">
+                                    <img src="img/instagram.svg" alt="instagram">
+                                </a>
+                            </div>
+                            <p class="ms-2">
+                                *Признаны экстремистскими организациями и запрещены на территории РФ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column">
+                        <div class="footer-title">
+                            Документы
+                        </div>
+                        <a href="#" class="mb-2">
+                            Политика конфиденциальности
+                        </a>
+                        <a href="#">
+                            Пользовательское соглашение
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
